@@ -1,0 +1,14 @@
+cachetools==4.2.0
+certifi==2020.12.5
+chardet==4.0.0
+cssselect==1.1.0
+cssutils==1.0.2
+DateTime==4.3
+idna==2.10
+lxml==4.6.2
+premailer==3.7.0
+pytz==2020.5
+requests==2.25.1
+urllib3==1.26.2
+yagmail==0.14.245
+zope.interface==5.2.0
