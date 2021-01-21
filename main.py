@@ -15,6 +15,7 @@ yag = yagmail.SMTP(os.environ['NOTIFIER_EMAIL'], os.environ['NOTIFIER_KEY'])
 update_email = os.environ['USER_EMAIL']
 login_details = {}
 
+yag.send(update_email, 'Test', 'Bot is running!')
 
 def get_login_details():
     with open('credentials.json') as file:
