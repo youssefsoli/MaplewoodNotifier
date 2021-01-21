@@ -40,6 +40,8 @@ def login(username, password):
 
 def get_markbook_list():
     page = s.get(maplewood_url + 'Viewer/main.aspx')
+    if not page.ok:
+        raise page.raise_for_status()
     tree = lh.fromstring(page.content)
     return tree.xpath('//a/@onclick')[:-1]  # Removes last element from array
 
