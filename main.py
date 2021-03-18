@@ -124,7 +124,7 @@ if __name__ == '__main__':
     while True:
         time = datetime.now().strftime("%d-%b-%Y (%H:%M:%S.%f)")
         num_intervals += 1
-        if num_intervals % 24 == 0:
+        if num_intervals % 12 == 0:
             num_intervals = 0
             print(time + ' - Logging into Maplewood again')
             if not login(login_details['username'], login_details['password']):
