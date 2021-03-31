@@ -123,20 +123,9 @@ if __name__ == '__main__':
 
     while True:
         time = datetime.now().strftime("%d-%b-%Y (%H:%M:%S.%f)")
-        num_intervals += 1
-        if num_intervals % 4 == 0:
-            num_intervals = 0
-            print(time + ' - Logging into Maplewood again')
-            if not login(login_details['username'], login_details['password']):
-                yag.send(update_email, 'Could not login to Maplewood!', ':(')
-                sleep(600)
-                continue
-            else:
-                print(time + ' - Logged in!')
-                markbooks = compare_markbooks(markbooks) # Compare current list
-                markbookInfo = tuple(map(clean_markbook, get_markbook_list()))
-                markbooks = grab_markbooks(markbookInfo)  # Re-grab markbook list
-                sleep(300)
-
+        if not login(login_details['username'], login_details['password']):
+            yag.send(update_email, 'Could not login to Maplewood!', ':(')
+            sleep(600)
+            continue
         markbooks = compare_markbooks(markbooks)
         sleep(300)
